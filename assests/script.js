@@ -20,17 +20,14 @@ function timeTracker() {
 
     // To check time and add the classes for background to change color
     if (blockTime < timeNow) {
-        $(this).removeClass("future");
         $(this).removeClass("present");
-        $(this).removeClass("past");
+        $(this).addClass("future");
     } else if (blockTime === timeNow) {
-        $(this).removeClass("past");
+        $(this).addClass("present");
+        $(this).children(".description").addClass("white-text");
+    } else if (blockTime > timeNow) {
         $(this).removeClass("future");
-        $(this).removeClass("present");
-    } else {
-        $(this).removeClass("present");
-        $(this).removeClass("past");
-        $(this).removeClass("future");
+        $(this).addClass("past");
     }
 
     })
