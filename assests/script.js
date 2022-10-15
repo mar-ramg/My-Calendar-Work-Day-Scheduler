@@ -19,12 +19,12 @@ function timeTracker() {
         var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
     // To check time and add the classes for background to change color
-    if (blockTime < timeNow) {
-        $(this).removeClass("present");
-        $(this).addClass("future");
-    } else if (blockTime === timeNow) {
+    if (blockTime === timeNow) {
         $(this).addClass("present");
         $(this).children(".description").addClass("white-text");
+    } else if (blockTime < timeNow) {
+        $(this).removeClass("present");
+        $(this).addClass("future");
     } else if (blockTime > timeNow) {
         $(this).removeClass("future");
         $(this).addClass("past");
